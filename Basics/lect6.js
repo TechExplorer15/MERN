@@ -90,6 +90,28 @@ console.log(star_string);
 *
 */
 
+let n = 5;  // number of rows
+
+console.log("Number Triangle:");
+for (let i = 1; i <= n; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+        row += j + " ";
+    }
+    
+    console.log(row.trim());
+}-
+
+// Pattern 2: Star Triangle
+console.log("\nStar Triangle:");
+for (let i = n; i >= 1; i--) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+        row += "*";
+    }
+    console.log(row);
+}
+
 /* -------Do-While loop-------- 
 - First execute the statement inside do block, then checks for condition*/
 

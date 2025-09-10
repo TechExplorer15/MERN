@@ -48,3 +48,8 @@ let x = true;
 x++
 console.log(x);
 console.log(true + true);
+
+
+let n = 1215;
+let last = n%10;
+console.log(last);
