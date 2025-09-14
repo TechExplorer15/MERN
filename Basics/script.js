@@ -1,4 +1,4 @@
-console.log("Hello World!");
+/* console.log("Hello World!");
 
 /* Wrong way of declare variable
 person1 = "Rohit";
@@ -8,7 +8,7 @@ person2 = "Pratik";
 person2age = 22;
 
 console.log(person1);
-console.log("The some of age of both person is:", person1age + person2age); */
+console.log("The some of age of both person is:", person1age + person2age); 
 
 // // write way of declare variable
 // console.log(person1);
@@ -77,7 +77,7 @@ console.log("The second last digit of", num2 , "is:", second_digit);
 
 /* 
 some weird behaviours of arithmatic operator
-*/
+
 
 //Addition
 
@@ -107,4 +107,27 @@ console.log(c);
 let r = "34";
 r += 26;
 r *= 2;
-console.log(r);
+console.log(r); */
+
+// Write a program that guess the correct number between 1-100
+console.log("Hello");
+
+let random = Math.floor(Math.random() * 100) + 1;
+let guess = 0;
+
+while (guess !== random) {
+  guess = Number(prompt("Guess the number Between 1 - 100"));
+
+  if (isNaN(guess) ||guess <= 0 || guess > 100) {
+    console.log("Enter the correct input!");
+    continue;
+  }
+
+  if (guess > random) {
+    console.log("Too High, Try Again!");
+  } else if (guess < random) {
+    console.log("Too low, Try Again!");
+  } else {
+    console.log("Congrats 🎉 the number is:", random);
+  }
+}
