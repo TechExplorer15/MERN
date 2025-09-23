@@ -6,7 +6,7 @@
 // Swap two numbers 
 
 let a = 10;
-let b = 756;
+let b = 7;
 let c;
 
 //c = a;

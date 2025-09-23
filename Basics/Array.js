@@ -128,7 +128,7 @@ arr1.push(6,7,8)
 console.log(arr1);
 
 //Q2
-console.log("question 2:// insert multiple elements using unshift()");
+console.log("insert multiple elements using unshift()");
 
 let arr2=[]
 n=5;
@@ -141,11 +141,11 @@ console.log(arr2);
 
 //or
 
-arr2.unshift(-3,-2,-1,0);  //right to left flow  <---------
+arr2.unshift(-3,-2,-1,0); 
 console.log(arr2);
 
 //Q3
-console.log("Question 3: write a function to return the index of a target element");
+console.log("write a function to return the index of a target element");
 
 function findIndex(arr,targetValue) {
 
