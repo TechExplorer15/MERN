@@ -67,3 +67,6 @@ let resume = {name: "Tanmay",
 }
 
 resume.dispaly();
+
+
+//Object is a one type of storage container in which the data is stored in key-value pair.
