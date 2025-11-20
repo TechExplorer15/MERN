@@ -1,0 +1,107 @@
+/* Reset and base styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #ffffff;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout container */
+.stage {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  box-sizing: border-box;
+}
+
+/* Sidebar card */
+.sidebar {
+  width: 300px;
+  height: 620px;
+  border: 1px solid #e8e8e8;
+  border-radius: 0 14px 14px 0;
+  padding: 42px 36px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01) inset;
+}
+
+/* Title */
+.workspace-title {
+  color: #6f2be8;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111827;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1;
+  padding: 6px 0;
+  transition: color 0.15s ease, transform 0.12s ease;
+}
+
+nav a:hover {
+  color: #6f2be8;
+  transform: translateX(4px);
+}
+
+/* Decorative faint top and bottom lines */
+.sidebar::before,
+.sidebar::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #eee, transparent);
+  opacity: 0.7;
+  border-radius: 2px;
+}
+
+.sidebar::before {
+  top: 12px;
+}
+
+.sidebar::after {
+  bottom: 12px;
+}
+
+/* Responsive (for small screens) */
+@media (max-width: 700px) {
+  .stage {
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .sidebar {
+    width: 90%;
+    height: auto;
+    padding: 28px;
+  }
+}

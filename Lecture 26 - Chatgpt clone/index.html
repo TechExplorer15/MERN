@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ChatGPT UI Clone</title>
+
+  <!-- Optional: Google font (works if online) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="logo">
+          <!-- simple round logo -->
+          <div class="logo-mark">✦</div>
+          <div class="logo-text">ChatGPT</div>
+        </div>
+
+        <nav class="primary-actions">
+          <button class="btn new-chat">+ New chat</button>
+          <button class="btn">🔎Search chats</button>
+          <button class="btn">📚Library</button>
+          <button class="btn">GPTs</button>
+          <button class="btn">Projects</button>
+        </nav>
+      </div>
+
+      <div class="chats">
+        <h4>Chats</h4>
+        <ul class="chat-list">
+          <li>Frontend development teach...</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user">
+          <div class="avatar">T</div>
+          <div class="user-info">
+            <div class="name">Tanmay W</div>
+            <div class="status">Go</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main area -->
+    <main class="main">
+      <header class="topbar">
+        <div class="version">ChatGPT <span class="ver-num">5.1</span></div>
+        <div class="top-icons">
+          <button class="icon-btn">Sign Out</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <h1>What can I help with?</h1>
+
+        <div class="prompt-wrap">
+          <button class="plus">+</button>
+          <input class="prompt" type="text" placeholder="Ask anything" aria-label="Ask anything" />
+          <div class="voice">
+            <button class="mic" title="Voice input">🎙️</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="blank"></section>
+    </main>
+  </div>
+
+  <!-- OPTIONAL: small script to focus input on click of plus -->
+  <script>
+    document.querySelector('.plus').addEventListener('click', () => {
+      document.querySelector('.prompt').focus();
+    });
+  </script>
+</body>
+</html>

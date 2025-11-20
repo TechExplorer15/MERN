@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QTrip — Explore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="brand">QTrip</div>
+    <nav class="navlinks">
+      <a href="#">Home</a>
+      <a href="#">Explore</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero banner">
+    <div class="hero__bg" id="heroBg"
+      style="background-image: url('https://images.unsplash.com/photo-1473447192725-6c6a2a7f4d54?auto=format&fit=crop&w=1600&q=60');">
+      <!-- Replace with your own background image -->
+    </div>
+
+    <div class="hero__content">
+      <h1>Welcome to QTrip</h1>
+      <p class="lead">Explore the world with fantastic places to venture around.</p>
+
+      <div class="search-wrap">
+        <form class="search" onsubmit="event.preventDefault(); alert('Searching for: ' + document.getElementById('q').value);">
+          <input id="q" type="search" placeholder="Search a city" aria-label="Search a city" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="card-grid">
+      <!-- Card 1 -->
+      <article class="card">
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1533714302463-d5d7a9b4bf6b?auto=format&fit=crop&w=1200&q=60')"></div>
+        <div class="meta">
+          <div class="title">Urban high-rises</div>
+          <div class="subtitle">Skyscrapers & city life</div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1505765054972-1d2f5b1b7e3a?auto=format&fit=crop&w=1200&q=60')"></div>
+        <div class="meta">
+          <div class="title">Riverside views</div>
+          <div class="subtitle">Bridges and waterfronts</div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60')"></div>
+        <div class="meta">
+          <div class="title">Coastal escapes</div>
+          <div class="subtitle">Sunny beaches & blue seas</div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card">
+        <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1549899346-1a9d4a6fbb45?auto=format&fit=crop&w=1200&q=60')"></div>
+        <div class="meta">
+          <div class="title">Historic gates</div>
+          <div class="subtitle">Iconic architecture</div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+</body>
+</html>

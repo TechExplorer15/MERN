@@ -1,0 +1,74 @@
+h1 {
+    background-color: bisque;
+}
+
+p {
+    text-align: center;
+}
+
+.p2{
+    background-color: rgb(211, 190, 190);
+}
+
+#p2{
+    color: yellow;
+}
+
+.c1{
+    color: rgb(216, 183, 16);
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+
+.c2{
+    border: 2px solid green;
+    padding: 20px;
+    margin: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font: bolder;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    font-style: italic;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.flex-item{
+    background-color: aquamarine;
+    margin: 20px;
+    padding: 20px;
+    display: inline;
+    width: 100px;
+    text-align: center;
+    height: 30px;
+}
+
+.flex-container{
+    background-color: beige;
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    /*flex-direction: row-reverse;*/
+
+    justify-content: center;
+    /* justify-content: end;
+    justify-content: space-evenly;*/
+    align-items: center;
+    /*align-items: baseline;
+    align-items: first baseline; */
+}
+
+#One{
+    flex-grow: 1;
+}
+#Two {
+    flex-grow: 1;
+}
+#Tree {
+    flex-grow: 1;
+}

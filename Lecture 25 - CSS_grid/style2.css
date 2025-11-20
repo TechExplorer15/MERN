@@ -1,0 +1,264 @@
+/* Basic reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f7f7f8;
+  color: #111;
+  line-height: 1.5;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.navbar {
+  background-color: #131921;
+  color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+.logo .dot {
+  color: #ff9900;
+}
+
+/* Search bar */
+.search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 600px;
+  margin: 0 20px;
+}
+
+.search-bar {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-btn {
+  background-color: #febd69;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 9px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: #f3a847;
+}
+
+/* Actions on the right (Sign in + Cart) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.signin {
+  background-color: #febd69;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.signin:hover {
+  background-color: #f3a847;
+}
+
+.cart {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* ---------------- MAIN CONTAINER ---------------- */
+.main-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 16px;
+  gap: 24px;
+}
+
+/* ---------------- SIDEBAR ---------------- */
+.sidebar {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  width: 220px;
+  border: 1px solid #e3e3e3;
+  height: fit-content;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.sidebar h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 8px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #007185;
+  font-size: 15px;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------- PRODUCT GRID ---------------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  flex: 1;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #b12704;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn {
+  background-color: #ffd814;
+  color: #111;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #f7ca00;
+}
+
+/* ---------------- FOOTER ---------------- */
+.site-footer {
+  background-color: #131921;
+  color: #fff;
+  text-align: center;
+  padding: 16px;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+/* ---------------- ACCESSIBILITY ---------------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+/* ---------------- RESPONSIVE DESIGN ---------------- */
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .search {
+    max-width: none;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .nav-actions {
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amazon Layout Clone</title>
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+  <header class="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="#" class="logo" aria-label="Amazon home">amazon<span class="dot">.in</span></a>
+
+      <form class="search" role="search" action="#" onsubmit="return false;">
+        <label for="site-search" class="visually-hidden">Search</label>
+        <input id="site-search" type="search" class="search-bar" placeholder="Search for products, brands and more" />
+        <button class="search-btn" aria-label="Search">🔍</button>
+      </form>
+
+      <div class="nav-actions">
+        <button class="signin">Sign in</button>
+        <a href="#cart" class="cart" aria-label="Cart">🛒 Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <aside class="sidebar" aria-label="Shop by category">
+      <h3>Shop by Category</h3>
+      <ul>
+        <li><a href="#">Mobiles</a></li>
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Home Appliances</a></li>
+        <li><a href="#">Books</a></li>
+        <li><a href="#">Fashion</a></li>
+        <li><a href="#">Sports</a></li>
+      </ul>
+    </aside>
+
+    <main class="product-grid" id="products" role="main">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x150" alt="Wireless Earbuds" />
+        <h4>Wireless Earbuds</h4>
+        <p class="price">₹1,499</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x150" alt="Smartwatch" />
+        <h4>Smartwatch</h4>
+        <p class="price">₹2,999</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x150" alt="Bluetooth Speaker" />
+        <h4>Bluetooth Speaker</h4>
+        <p class="price">₹1,199</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x150" alt="Portable Charger" />
+        <h4>Portable Charger</h4>
+        <p class="price">₹899</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x150" alt="Laptop Sleeve" />
+        <h4>Laptop Sleeve</h4>
+        <p class="price">₹699</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; <span id="year"></span> Amazon Clone — for learning purposes</p>
+  </footer>
+
+  <script>
+    // small script to set the current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

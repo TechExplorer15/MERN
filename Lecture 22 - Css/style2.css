@@ -1,0 +1,36 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+h2{
+    padding: auto;
+}
+
+li{
+    display: inline;
+    position: relative;
+    word-spacing: 5;
+    letter-spacing: 0.5px;
+}
+
+.c1 {
+     background-color: rgb(22, 22, 22);
+    padding: auto;
+    display: inline;
+    width: 100px;
+    text-align: center;
+    height: 30px;
+}
+.C {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: end;
+}

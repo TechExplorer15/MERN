@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: skyblue;
+  font-family: Arial, sans-serif;
+}
+
+/* Card */
+.card {
+  background: white;
+  padding: 40px 60px;
+  border-radius: 10px;
+  font-size: 40px;
+  font-weight: 900;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  text-transform: uppercase;
+}
+
+/* left text */
+.card .left {
+  color: #111;
+}
+
+/* rotating words container */
+.words {
+  height: 48px;                /* keep height stable */
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+}
+
+/* animate the list upward */
+.words ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  animation: rotate 12s infinite;
+}
+
+.words li {
+  height: 48px;                /* same as container */
+  color: #2b87d9;
+  font-weight: 900;
+}
+
+/* animation to slide the words upward */
+@keyframes rotate {
+  0%    { transform: translateY(0); }
+  10%   { transform: translateY(0); }
+
+  20%   { transform: translateY(-48px); }
+  30%   { transform: translateY(-48px); }
+
+  40%   { transform: translateY(-96px); }
+  50%   { transform: translateY(-96px); }
+
+  60%   { transform: translateY(-144px); }
+  70%   { transform: translateY(-144px); }
+
+  80%   { transform: translateY(-192px); }
+  90%   { transform: translateY(-192px); }
+
+  100%  { transform: translateY(0); }
+}
