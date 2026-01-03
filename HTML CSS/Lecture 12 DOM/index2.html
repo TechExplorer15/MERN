@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Main container */
+.box {
+    background: #ffffff;
+    padding: 25px 30px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+#add {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#num{
+    font-weight: 700;
+    font-size: 30px;
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Limited Counter (0-10)</h2>
+        <p id="num">0</p>
+        <button id="add">Add</button>
+        <p id="msg"></p>
+    </div>
+
+<script>
+    document.getElementById("add").addEventListener("click", function(){
+        const p = document.getElementById("num");
+        let value = Number(p.textContent);
+        value = value + 1;
+        p.textContent = value;
+
+        if(value < 10) {
+            value++;
+            numBox.textContent = value;
+            msg.textContent = "Number increased!";
+        }
+        else{
+            msg.textContent = "Limit reached! You cannot go above 10.";
+        }
+
+    }); 
+</script>
+</body>
+</html>

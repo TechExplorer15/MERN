@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+    <h1>To-Do App</h1>
+
+    <div class="input-area">
+        <input 
+            type="text" 
+            id="taskInput" 
+            placeholder="Enter a task and press Enter"
+            aria-label="Task input"
+        >
+        <button id="addBtn">Add</button>
+    </div>
+
+    <div class="filters">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="pending">Yet to do</button>
+        <button data-filter="completed">Completed</button>
+        <button id="clearCompleted">Clear Completed</button>
+    </div>
+
+    <div class="stats">
+        <span id="total">Total: 0</span>
+        <span id="pending">Pending: 0</span>
+        <span id="done">Completed: 0</span>
+    </div>
+
+    <ul id="todoList"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

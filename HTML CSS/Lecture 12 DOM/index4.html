@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: whitesmoke;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Main container */
+.box {
+    background: #ffffff;
+    padding: 25px 30px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+#incr {
+    background: #43a29c;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#decr {
+    color: black;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#reset {
+    background-color: whitesmoke;
+    color: black;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Minimal Counter</h2>
+        <h2 id="count">0</h2>
+        <button id="decr">-</button>
+        <button id="incr">+</button>
+        <button id="reset">Reset</button>
+    </div>
+
+<script>
+  const countEl = document.getElementById("count");
+  const incrBtn = document.getElementById("incr");
+  const decrBtn = document.getElementById("decr");
+  const resetBtn = document.getElementById("reset");
+
+  let count = 0;
+
+  incrBtn.addEventListener("click", () => {
+    count++;
+    countEl.textContent = count;
+  });
+
+  decrBtn.addEventListener("click", () => {
+    if(count > 0){
+    count--;
+    countEl.textContent = count;}
+  });
+
+  resetBtn.addEventListener("click", () => {
+    count = 0;
+    countEl.textContent = count;
+  });
+
+</script>
+</body>
+</html>

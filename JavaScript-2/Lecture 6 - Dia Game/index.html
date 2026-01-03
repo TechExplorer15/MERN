@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice Guess Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+    <h2>🎲 Dice Guess Game</h2>
+    <p>Guess a number (1 - 6)</p>
+
+    <div class="dice-container">
+        <div class="dice" id="dice">?</div>
+    </div>
+
+    <input type="number" id="userInput" min="1" max="6">
+    <br>
+
+    <button onclick="checkGuess()">Roll Dice</button>
+    <button id="tryAgain" onclick="resetGame()">Try Again</button>
+
+    <p id="result"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

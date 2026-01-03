@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.app {
+    background: #fff;
+    width: 420px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.filters {
+    display: flex;
+    gap: 6px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.filters button.active {
+    background: #333;
+    color: #fff;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.todo.completed span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.todo button {
+    background: transparent;
+    border: none;
+    color: red;
+    font-size: 16px;
+}
+
+
