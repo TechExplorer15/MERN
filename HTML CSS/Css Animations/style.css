@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+    font-family: GeneralSans-Regular;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#btn {
+  background: rgb(54, 180, 68);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  transition: 0.5s;
+  border-radius: 14px;
+}
+
+#btn:hover {
+    background: red;
+}
+
+.box {
+
+  width: 100px;
+  height: 100px;
+  background: green;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.2);
+}

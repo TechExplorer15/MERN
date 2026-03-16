@@ -1,3 +1,4 @@
+// ===== GET HTML ELEMENTS =====
 const input = document.getElementById("taskInput");
 const addBtn = document.getElementById("addBtn");
 const todoList = document.getElementById("todoList");
@@ -8,68 +9,97 @@ const totalEl = document.getElementById("total");
 const pendingEl = document.getElementById("pending");
 const doneEl = document.getElementById("done");
 
+// ===== LOAD TODOS FROM LOCAL STORAGE =====
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
 let currentFilter = "all";
 
+// ===== SAVE TODOS TO LOCAL STORAGE =====
 function saveTodos() {
     localStorage.setItem("todos", JSON.stringify(todos));
 }
 
+// ===== UPDATE STATISTICS =====
 function updateStats() {
     totalEl.textContent = `Total: ${todos.length}`;
-    pendingEl.textContent = `Pending: ${todos.filter(t => !t.completed).length}`;
-    doneEl.textContent = `Completed: ${todos.filter(t => t.completed).length}`;
+    pendingEl.textContent = `Pending: ${todos.filter(todo => !todo.completed).length}`;
+    doneEl.textContent = `Completed: ${todos.filter(todo => todo.completed).length}`;
 }
 
+// ===== RENDER TODOS ON SCREEN =====
 function render() {
-    let filtered = todos;
 
-    if (currentFilter === "pending") {
-        filtered = todos.filter(t => !t.completed);
-    } else if (currentFilter === "completed") {
-        filtered = todos.filter(t => t.completed);
+    // Step 1: Decide which todos to show
+    let todosToShow = [];
+
+    if (currentFilter === "all") {
+        todosToShow = todos;
+    } 
+    else if (currentFilter === "pending") {
+        todosToShow = todos.filter(todo => !todo.completed);
+    } 
+    else if (currentFilter === "completed") {
+        todosToShow = todos.filter(todo => todo.completed);
     }
 
-    const items = filtered.map((todo, index) => {
+    // Step 2: Clear old list
+    todoList.innerHTML = "";
+
+    // Step 3: Create list items
+    todosToShow.forEach(todo => {
+
         const li = document.createElement("li");
         li.className = "todo";
-        if (todo.completed) li.classList.add("completed");
 
+        if (todo.completed) {
+            li.classList.add("completed");
+        }
+
+        // ===== CHECKBOX =====
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.checked = todo.completed;
 
         checkbox.addEventListener("change", () => {
-            todos[index].completed = checkbox.checked;
+            // Find the correct todo using its ID
+            const foundTodo = todos.find(t => t.id === todo.id);
+            foundTodo.completed = checkbox.checked;
+
             saveTodos();
             render();
         });
 
+        // ===== TEXT =====
         const span = document.createElement("span");
         span.textContent = todo.text;
 
-        const delBtn = document.createElement("button");
-        delBtn.textContent = "✖";
-        delBtn.addEventListener("click", () => {
-            todos.splice(index, 1);
+        // ===== DELETE BUTTON =====
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "✖";
+
+        deleteBtn.addEventListener("click", () => {
+            // Remove todo using its ID
+            todos = todos.filter(t => t.id !== todo.id);
+
             saveTodos();
             render();
         });
 
-        li.append(checkbox, span, delBtn);
-        return li;
+        li.append(checkbox, span, deleteBtn);
+        todoList.appendChild(li);
     });
 
-    todoList.replaceChildren(...items);
     updateStats();
 }
 
+// ===== ADD NEW TODO =====
 function addTodo() {
-    const value = input.value.trim();
-    if (!value) return;
+    const text = input.value.trim();
+
+    if (text === "") return;
 
     todos.unshift({
-        text: value,
+        id: Date.now(),      // Unique ID (simple and safe)
+        text: text,
         completed: false
     });
 
@@ -78,25 +108,36 @@ function addTodo() {
     render();
 }
 
+// ===== EVENTS =====
 addBtn.addEventListener("click", addTodo);
 
-input.addEventListener("keydown", e => {
-    if (e.key === "Enter") addTodo();
+input.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+        addTodo();
+    }
 });
 
-filterButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-        filterButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        currentFilter = btn.dataset.filter;
+// ===== FILTER BUTTONS =====
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+
+        // Add active class to clicked button
+        button.classList.add("active");
+
+        currentFilter = button.dataset.filter;
         render();
     });
 });
 
+// ===== CLEAR COMPLETED TODOS =====
 clearCompletedBtn.addEventListener("click", () => {
-    todos = todos.filter(t => !t.completed);
+    todos = todos.filter(todo => !todo.completed);
     saveTodos();
     render();
 });
 
+// ===== INITIAL RENDER =====
 render();
