@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Fix</title>
+</head>
+<body>
+   <div id="root"></div>
+
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- React Modules -->
+    <script type="module">
+        import React from "https://esm.sh/react";
+        import { createRoot } from "https://esm.sh/react-dom/client";
+
+        window.React = React;
+        window.createRoot = createRoot;
+    </script>
+
+    <!-- JSX Code -->
+    <script type="text/babel">
+        const greeting = "Hello";
+        const greetinf = "World";
+
+        function Message(props){
+            return (
+                <span>
+                    {props.msg}
+                    <br/>
+                </span>
+            );
+        }
+
+        function handleClick(){
+            console.log("clicked");
+        }
+
+        const section = (
+            <section className="container">
+                <Message msg={greeting} />
+                <Message msg={greetinf} />
+                <button onClick={handleClick}>Click Me</button>
+            </section>
+        );
+
+        const root = createRoot(document.getElementById("root"));
+        root.render(section);
+    </script>
+
+</body>
+</html>
